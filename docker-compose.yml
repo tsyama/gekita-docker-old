@@ -1,0 +1,14 @@
+version: '3'
+
+volumes:
+  bundle:
+
+services:
+  web:
+    build: ./web/
+    volumes:
+      - ./web/src/:/usr/src/gekita/
+      - bundle:/usr/local/bundle/
+    ports:
+      - 3000:3000
+    command: tail -f /dev/null
